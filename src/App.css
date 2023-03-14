@@ -1,43 +1,39 @@
-.parrent{
-  margin-left: 100px;
+body {
+  margin: 0px
 }
-.movie_container{
+
+.movie-container {
   width: 340px;
-  box-shadow: 10px 5px 5px rgb(71, 70, 70);
+
 }
-.movie_poster{
-  height: 540px;
+
+.movie-poster {
+  height: 640px;
   width: 100%;
-  object-fit: cover;
+  object-fit: cover
 }
-.movie_data{
+
+
+.movie-data {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.movielist{
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-.movie_name{
+
+.movie-name {
   font-size: 24px;
   margin-top: 0;
+}
 
-}
-.movie_rating{
+.movie-rating {
+
   margin-top: 0;
-  margin-right: 10px;
+  margin-right: 10px
 }
-.a{
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.5em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: gray;
-  cursor: pointer;
-  color:white;
+
+.movie-list {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
