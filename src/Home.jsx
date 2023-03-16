@@ -25,7 +25,7 @@ const [formstate,setformstate]=useState("success")
     onSubmit: async (values) => {
       // console.log(values)
 
-  const data=  await fetch("http://localhost:4000/users/login", {
+  const data=  await fetch("https://tasty-sweater-tuna.cyclic.app/users/login", {
         method: "POST",
         headers: {
           "content-type": "application/json"
@@ -40,7 +40,7 @@ setformstate("error")
         const result= await data.json()
         console.log("success",result);
         localStorage.setItem("token",result.token)
-        navigate("/seats")
+        navigate("/movies")
       }
       
     }
@@ -90,7 +90,7 @@ const [formstate,setformstate]=useState("success")
   const adddata= (newdata)=>{
     console.log(newdata)
 
-       fetch("http://localhost:4000/users/signup",{
+       fetch("https://tasty-sweater-tuna.cyclic.app/users/signup",{
         method:"POST",
       body:JSON.stringify(newdata),
     headers:{

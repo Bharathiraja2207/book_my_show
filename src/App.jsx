@@ -13,8 +13,8 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import InfoIcon from '@mui/icons-material/Info';
-import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import { Home } from './Home';
+import { Seats } from './Seats';
 
 export default function App() {
 
@@ -27,6 +27,8 @@ export default function App() {
           <Toolbar>
             <Button onClick={() => navigate("/")} color="inherit">Home</Button>
             <Button onClick={() => navigate("/movies")} color="inherit">Movie</Button>
+            <Button onClick={() => navigate("/addmovies")} color="inherit">Add Movies</Button>
+            <Button onClick={() => navigate("/add-theatre")} color="inherit">Add Theatre</Button>
           </Toolbar>
         </AppBar>
       </Box>
@@ -36,6 +38,7 @@ export default function App() {
         <Route path="/showtime" element={<Theater/>} />
         <Route path="/movies" element={<MovieList movieList={movieList} setMovieList={setMovieList} />} />
         <Route path="/movies/:id" element={<MovieDetails movieList={movieList} />} />
+        <Route path="/ticketbooked" element={<TicketBooked />} />
       </Routes>
 
     </div>
@@ -51,12 +54,18 @@ function Proudctedroute({children}){
   )
 }
 
+function TicketBooked() {
+  return (
+    <div> your ticked has conformed</div>
+  )
+}
+
 function MovieDetails({ movieList }) {
   const navigate = useNavigate()
   const { id } = useParams()
   const [movie, setMovie] = useState([])
   useEffect(() => {
-    fetch(`https://641061f4864814e5b64fe12e.mockapi.io/movies/${id}`)
+    fetch(`https://tasty-sweater-tuna.cyclic.app/moviesid/${id}`)
       .then((data) => data.json())
       .then((mvs) => setMovie(mvs))
   }, [id])
@@ -84,7 +93,7 @@ function MovieDetails({ movieList }) {
 
 function MovieList({ movieList, setMovieList }) {
   useEffect(() => {
-    fetch("https://641061f4864814e5b64fe12e.mockapi.io/movies")
+    fetch("https://tasty-sweater-tuna.cyclic.app/moviesid")
       .then((data) => data.json())
       .then((mvs) => setMovieList(mvs))
   }, [])
@@ -151,27 +160,3 @@ function Showtime({show}){
   )
 }
 
-function Seats(){
-  const button = Array(100).fill(<CheckBoxOutlineBlankIcon />)
-    return (
-        <div className="seatlist">
-            {button.map((btn, i) => <Seatbooking key={i} button={btn} />)}
-        </div>
-    )
-
-}
-
-function Seatbooking({button,key}){
-  const [active, setActive] = useState(true)
-    const [count, setCount] = useState(0)
-    const handleClick = () => {
-        setCount(count + 1)
-        setActive(!active)
-        console.log("clicked")
-    }
-    return (
-        <div className="seats">
-            <Button color={active ? "success" : "inherit"} onClick={handleClick}>{button}{key}</Button>
-        </div>
-    )
-}
