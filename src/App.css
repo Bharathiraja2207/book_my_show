@@ -97,3 +97,21 @@ body {
     align-items: center;
 
 }
+
+/* seats */
+.seats{
+  text-align: center;
+}
+.seatarrenge{
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: stretch;
+}
+
+
+.trailer{
+  text-align: center;
+}

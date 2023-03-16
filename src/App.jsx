@@ -27,8 +27,8 @@ export default function App() {
         <AppBar position="static">
           <Toolbar>
             <Button onClick={() => navigate("/")} color="inherit">Home</Button>
-            <Button onClick={() => navigate("/movies")} color="inherit">Movie</Button>
-            <Button onClick={() => navigate("/addmovies")} color="inherit">Add Movies</Button>
+            <Button onClick={() => navigate("/movies")} color="inherit">Movies</Button>
+            <Button onClick={() => navigate("/addmovies")} color="inherit">Add Movies </Button>
             <Button onClick={() => navigate("/add-theatre")} color="inherit">Add Theatre</Button>
           </Toolbar>
         </AppBar>
@@ -36,12 +36,12 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/seats" element={<Proudctedroute><Seats /></Proudctedroute>} />
-        <Route path="/showtime" element={<Theater/>} />
-        <Route path="/movies" element={<MovieList movieList={movieList} setMovieList={setMovieList} />} />
-        <Route path="/movies/:id" element={<MovieDetails movieList={movieList} />} />
-        <Route path="/ticketbooked" element={<TicketBooked />} />
-        <Route path="/add-theatre" element={<AddTheatre />} />
-        <Route path="/addmovies" element={<AddMovies />} />
+        <Route path="/showtime" element={<Proudctedroute><Theater/></Proudctedroute>} />
+        <Route path="/movies" element={<Proudctedroute><MovieList movieList={movieList} setMovieList={setMovieList} /></Proudctedroute>} />
+        <Route path="/movies/:id" element={<Proudctedroute><MovieDetails movieList={movieList} /></Proudctedroute>} />
+        <Route path="/ticketbooked" element={<Proudctedroute><TicketBooked /></Proudctedroute>} />
+        <Route path="/add-theatre" element={<Proudctedroute><AddTheatre /></Proudctedroute>} />
+        <Route path="/addmovies" element={<Proudctedroute><AddMovies /></Proudctedroute>} />
       </Routes>
 
     </div>
@@ -73,22 +73,24 @@ function MovieDetails({ movieList }) {
       .then((mvs) => setMovie(mvs))
   }, [id])
   return (
-    <div>
+    <div className='trailer'>
+      <div className='video'>
       <iframe
-        width="100%"
-        height="650"
+        width="70%"
+        height="450"
         src={movie.trailer}
         title="Marvel"
         frameborder="0"
         allow="accelerometer; autoplay;clipboard-white"
         allowfullscreen
       ></iframe>
+      </div>
       <div className="movie-detail-container">
-        <h1>Movie Details of {movie.name}</h1>
+        <h1>Movie Name : {movie.name}</h1>
        
-            <p className="movie-summary">{movie.summary}</p>
+            <p className="movie-summary"><h4>{movie.summary}</h4></p>
          
-        <Button onClick={() => navigate("/showtime")} color="inherit">book ticket</Button>
+        <Button onClick={() => navigate("/showtime")} variant="contained" color="success">book ticket</Button>
       </div>
     </div>
   )

@@ -20,9 +20,10 @@ export function Seats() {
                     <option>5</option>
                 </select>
             </section>
-            <p>3D-EXECUTIVE-RS.160/-</p>
-            <Seat />
-            <Booked />
+            <p>First class-RS.200/-</p>
+            <p>second class-RS.180/-</p>
+            <p>Third class-RS.160/-</p>
+            <div className='seatarrenge'><div><Seat /></div><div><Booked /></div></div>
         </div>
     );
 }
