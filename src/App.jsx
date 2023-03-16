@@ -3,7 +3,6 @@ import reactLogo from './assets/react.svg'
 import './App.css'
 import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -15,6 +14,8 @@ import Typography from '@mui/material/Typography';
 import InfoIcon from '@mui/icons-material/Info';
 import { Home } from './Home';
 import { Seats } from './Seats';
+import { AddTheatre } from './AddTheatre';
+import { AddMovies } from './AddMovies';
 
 export default function App() {
 
@@ -39,6 +40,8 @@ export default function App() {
         <Route path="/movies" element={<MovieList movieList={movieList} setMovieList={setMovieList} />} />
         <Route path="/movies/:id" element={<MovieDetails movieList={movieList} />} />
         <Route path="/ticketbooked" element={<TicketBooked />} />
+        <Route path="/add-theatre" element={<AddTheatre />} />
+        <Route path="/addmovies" element={<AddMovies />} />
       </Routes>
 
     </div>
@@ -159,4 +162,6 @@ function Showtime({show}){
       </div>
   )
 }
+
+
 

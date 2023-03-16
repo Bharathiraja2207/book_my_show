@@ -68,3 +68,32 @@ body {
   max-width: 500px;
   margin-left: 200px;
 }
+/* addtheater */
+.addtheatre{
+  display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+
+}
+/* add movie */
+.addmovies{
+  display: flex;
+  max-width: 500px;
+  flex-direction: column;
+    align-content: center;
+    align-items: center;
+
+  
+}
+
+/* home */
+.home{
+  text-align: center;
+  display: flex;
+
+  flex-direction: row;
+    align-content: center;
+    align-items: center;
+
+}

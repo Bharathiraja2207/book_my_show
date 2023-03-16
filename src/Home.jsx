@@ -6,7 +6,7 @@ import { useState } from "react";
 
 export function Home() {
   return (
-    <div>Book my show<Login/><Signin/></div>
+    <div className="home"><div><Login/></div><div><Signin/></div></div>
     
   );
 }
@@ -18,8 +18,8 @@ const [formstate,setformstate]=useState("success")
 
   const formik = useFormik({
     initialValues: {
-      username:'bharathi',
-      password:'password@123'
+      username:'',
+      password:''
     },
     // validationSchema: formValidationSchema,
     onSubmit: async (values) => {
