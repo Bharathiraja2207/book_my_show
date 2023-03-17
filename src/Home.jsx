@@ -6,7 +6,7 @@ import { useState } from "react";
 
 export function Home() {
   return (
-    <div className="home"><div><Login/></div><div><Signin/></div></div>
+   <div className="homemain"> <div className="home"><div><Login/></div><div><Signin/></div></div></div>
     
   );
 }

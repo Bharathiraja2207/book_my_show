@@ -16,6 +16,7 @@ import { Home } from './Home';
 import { Seats } from './Seats';
 import { AddTheatre } from './AddTheatre';
 import { AddMovies } from './AddMovies';
+import TextField from '@mui/material/TextField';
 
 export default function App() {
 
@@ -59,7 +60,7 @@ function Proudctedroute({children}){
 
 function TicketBooked() {
   return (
-    <div> your ticked has conformed</div>
+    <div className='ticketconform'><h2>ticket conformed</h2> </div>
   )
 }
 
@@ -97,6 +98,7 @@ function MovieDetails({ movieList }) {
 }
 
 function MovieList({ movieList, setMovieList }) {
+  const [search,setsearch]=useState("")
   useEffect(() => {
     fetch("https://tasty-sweater-tuna.cyclic.app/moviesid")
       .then((data) => data.json())
@@ -104,19 +106,30 @@ function MovieList({ movieList, setMovieList }) {
   }, [])
 
   return (
-    <div className="movie-list">
-      {movieList.map((mv, id) => <Movies key={mv.id} movie={mv} id={mv.id} />)}
-    </div>
+    <div className="movie-list...">
+   <div className='searchbar'> <TextField  type="text" placeholder='search movie...'onChange={(event)=>setsearch(event.target.value)} /></div>
+    <div className='movie-list'>
+          {movieList.filter((mv)=>{
+  if(search ===""){
+    return mv
+  }else if(mv.name.toLowerCase().includes(search.toLowerCase())){
+    return mv
+  }
+  }).map((mv, id,key) => <Movies keys={key} movie={mv} id={mv.id} />)}
+  </div>
+  </div>
+
   )
-}
+  }
 
 
-function Movies({ movie, id }) {
+function Movies({ movie, id,keys }) {
   const navigate = useNavigate()
   return (
+    <div className='moviearrange'>    
     <Card  onClick={() => navigate(`/movies/${id}`)}>
 
-      <div className="movie-container">
+      <div key={keys} className="movie-container">
 
         <img className="movie-poster" src={movie.poster} alt={movie.name} />
         <CardContent>
@@ -138,6 +151,8 @@ function Movies({ movie, id }) {
       </div >
 
     </Card >
+    </div>
+
   )
 }
 

@@ -20,9 +20,7 @@ export function Seats() {
                     <option>5</option>
                 </select>
             </section>
-            <p>First class-RS.200/-</p>
-            <p>second class-RS.180/-</p>
-            <p>Third class-RS.160/-</p>
+            <p>TICKET PRICE-RS.200/-</p>
             <div className='seatarrenge'><div><Seat /></div><div><Booked /></div></div>
         </div>
     );
@@ -62,6 +60,6 @@ function Booked() {
 
     }
     return (
-        <Button variant="outlined" onClick={booked}>Booked</Button>
+        <Button color='success' variant="outlined" onClick={booked}>Book</Button>
     )
 } 

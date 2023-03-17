@@ -37,6 +37,19 @@ body {
   flex-wrap: wrap;
   justify-content: space-around;
 }
+.ticketconform{
+  text-align: center;
+  margin-top: 10%;
+}
+/* .moviearrange{
+  display: flex;
+  gap: 15px;
+} */
+.searchbar{
+  margin-left: 40%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 .show{
   text-align: center;
   display: flex;
@@ -55,6 +68,10 @@ body {
     column-gap: 10px;
 }
 /* login */
+
+.homemain{
+  text-align: center;
+}
 
 .loninfield{
   display: flex;
