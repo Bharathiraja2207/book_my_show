@@ -22,7 +22,7 @@ export function AddMovies() {
     }
   });
   const addMovies = (values) => {
-    fetch("https://tasty-sweater-tuna.cyclic.app/moviesid", {
+    fetch("https://bookmyshow-backend.vercel.app/moviesid", {
       method: "POST",
       body: JSON.stringify(values),
       headers: {
@@ -31,7 +31,7 @@ export function AddMovies() {
     });
   };
   return (
-    <div >
+    <div className='main addmovie'>
       <form className="addmovies" onSubmit={handleSubmit}>
         <TextField name="id"
           fullWidth sx={{ m: 1 }}
