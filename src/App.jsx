@@ -282,7 +282,7 @@ function Signin() {
         "content-type": "application/json"
       }
     });
-    navigate("/login");
+    navigate("/movies");
   };
   return (
     <div className="login-card">
